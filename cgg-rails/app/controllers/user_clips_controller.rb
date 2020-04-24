@@ -1,0 +1,2 @@
+class UserClipsController < ApplicationController
+end
