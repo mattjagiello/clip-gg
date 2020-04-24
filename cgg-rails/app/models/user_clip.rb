@@ -1,2 +1,0 @@
-class UserClip < ApplicationRecord
-end
