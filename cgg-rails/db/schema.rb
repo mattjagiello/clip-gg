@@ -43,9 +43,8 @@ ActiveRecord::Schema.define(version: 2020_04_24_004206) do
   end
 
   create_table "user_clips", force: :cascade do |t|
-    t.string "post_name"
-    t.string "post_url"
-    t.integer "post_upvotes"
+    t.integer "user_id"
+    t.integer "clip_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
