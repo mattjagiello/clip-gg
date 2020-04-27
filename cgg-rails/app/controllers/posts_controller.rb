@@ -3,6 +3,7 @@ require 'net/http'
 require 'openssl'
 require 'json'
 require 'pry'
+require "awesome_print"
 
 class PostsController < ApplicationController
 
@@ -21,7 +22,7 @@ class PostsController < ApplicationController
         response = http.request(request)
         api_key = response.read_body.slice(18,40)
         # binding.pry
-        subreddit_url = URI("https://oauth.reddit.com/r/LivestreamFail/top/")
+        subreddit_url = URI("https://www.reddit.com/r/livestreamfail/top.json")
 
         http = Net::HTTP.new(subreddit_url.host, subreddit_url.port)
         http.use_ssl = true
@@ -33,13 +34,18 @@ class PostsController < ApplicationController
         request["authorization"] = 'Bearer' + api_key
 
         response = http.request(request)
+        p response
         posts_string = response.read_body
-        p posts_extract = URI.extract(response.body)
+        json_response = JSON.parse(response.body, symbolize_names: true) #=> {key: :value}
+        ap(json_response)
+        # p posts_extract = URI.extract(response.body)
         # p posts_string
 
         # posts_string = response.body.to_s
         # p posts_string.force_encoding( Encoding::UTF_8 )
         binding.pry
+
+        render json: json_response
     end
 
 end
