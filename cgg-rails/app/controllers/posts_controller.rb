@@ -37,13 +37,25 @@ class PostsController < ApplicationController
         p response
         posts_string = response.read_body
         json_response = JSON.parse(response.body, symbolize_names: true) #=> {key: :value}
-        ap(json_response)
+        # ap(json_response)
+        json_response[:data][:children].each do |post|
+            p = Post.create(
+                post_name: post[:data][:title],
+                post_url: post[:data][:permalink],
+                post_upvotes: post[:data][:ups],
+              )
+            c = Clip.create(
+                clip_name: post[:data][:title],
+                clip_url: post[:data][:permalink],
+                post_id: Post.last.id
+            )
+        end
         # p posts_extract = URI.extract(response.body)
         # p posts_string
 
         # posts_string = response.body.to_s
         # p posts_string.force_encoding( Encoding::UTF_8 )
-        binding.pry
+        # binding.pry
 
         render json: json_response
     end
