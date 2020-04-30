@@ -7,23 +7,26 @@ class ClipContainer extends Component {
         super()
         this.state = {
             curUser: '',
+            clips: [],
         }
     }
 
     fetchClips = () => {
         console.log('fetch');
-        
+
         fetch('http://localhost:3000/posts', {
-          method: "GET",
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json'
-          },
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
         })
-          .then(res => res.json())
-          .then(json => console.log(json)
-          )
-      } 
+            .then(res => res.json())
+            .then(json => this.setState({
+                clips: json
+            })
+            )
+    }
 
     render() {
         this.fetchClips()
@@ -31,9 +34,9 @@ class ClipContainer extends Component {
             <div className="ClipContainer-Main">
                 <header>
                     <p>ClipContainer Component</p>
-                    <p><a href = "/test" >Previous Clip</a></p>
-                    < Clip />
-                    <p><a href = "/test" >Next Clip</a></p>
+                    <p><a href="/test" >Previous Clip</a></p>
+                    < Clip clipArray = {this.state.clips} />
+                    <p><a href="/test" >Next Clip</a></p>
                 </header>
             </div>
         )

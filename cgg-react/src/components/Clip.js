@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 
 class Clip extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             curUser: '',
+            clipArray: props.clipArray
         }
     }
 
