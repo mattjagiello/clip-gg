@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Clip from './Clip.js';
 
 class ClipContainer extends Component {
 
@@ -14,6 +15,7 @@ class ClipContainer extends Component {
             <div className="ClipContainer-Main">
                 <header>
                     <p>ClipContainer Component</p>
+                    < Clip />
                 </header>
             </div>
         )
