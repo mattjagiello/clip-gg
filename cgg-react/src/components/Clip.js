@@ -13,7 +13,7 @@ class Clip extends Component {
         return (
             <div className="Clip-Main">
                 <header>
-                    <p>Clip Component</p>
+                    <p><iframe src="https://clips.twitch.tv/embed?clip=GeniusAbstruseHawkAMPEnergy" frameborder="0" allowfullscreen="true" height="378" width="620"></iframe></p>
                 </header>
             </div>
         )
