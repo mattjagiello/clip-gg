@@ -8,12 +8,11 @@ class ClipContainer extends Component {
         this.state = {
             curUser: '',
             clips: [],
+            currentClip: undefined,
         }
     }
 
-    fetchClips = () => {
-        console.log('fetch');
-
+    componentDidMount() {
         fetch('http://localhost:3000/posts', {
             method: "GET",
             headers: {
@@ -29,13 +28,12 @@ class ClipContainer extends Component {
     }
 
     render() {
-        this.fetchClips()
         return (
             <div className="ClipContainer-Main">
                 <header>
                     <p>ClipContainer Component</p>
-                    <p><a href="/test" >Previous Clip</a></p>
-                    < Clip clipArray = {this.state.clips} />
+                    <p><a href='/test' >Previous Clip</a></p>
+                    < Clip clipArray={this.state.clips} />
                     <p><a href="/test" >Next Clip</a></p>
                 </header>
             </div>
