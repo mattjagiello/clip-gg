@@ -16,8 +16,8 @@ class Clip extends Component {
                     <p><iframe 
                         src="https://clips.twitch.tv/embed?clip=GeniusAbstruseHawkAMPEnergy"
                         // TODO - Accept props of url for clip
-                        frameborder="0"
-                        allowfullscreen="true"
+                        // frameborder="0"
+                        // allowfullscreen="true"
                         height="378"
                         width="620"
                         title="test"

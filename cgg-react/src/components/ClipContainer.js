@@ -10,15 +10,30 @@ class ClipContainer extends Component {
         }
     }
 
+    fetchClips = () => {
+        console.log('fetch');
+        
+        fetch('http://localhost:3000/posts', {
+          method: "GET",
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+          },
+        })
+          .then(res => res.json())
+          .then(json => console.log(json)
+          )
+      } 
+
     render() {
+        this.fetchClips()
         return (
             <div className="ClipContainer-Main">
                 <header>
-                    <p>ClipContainer Component
-                    <p><a href = "" target="_" >Previous Clip</a></p>
+                    <p>ClipContainer Component</p>
+                    <p><a href = "/test" >Previous Clip</a></p>
                     < Clip />
-                    <p><a href = "" target="_" >Next Clip</a></p>
-                    </p>
+                    <p><a href = "/test" >Next Clip</a></p>
                 </header>
             </div>
         )

@@ -57,7 +57,8 @@ class PostsController < ApplicationController
         # p posts_string.force_encoding( Encoding::UTF_8 )
         # binding.pry
 
-        render json: json_response
+        posts = Post.all
+        render json: posts
     end
 
 end
