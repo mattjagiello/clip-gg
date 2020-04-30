@@ -14,8 +14,11 @@ class ClipContainer extends Component {
         return (
             <div className="ClipContainer-Main">
                 <header>
-                    <p>ClipContainer Component</p>
+                    <p>ClipContainer Component
+                    <p><a href = "" target="_" >Previous Clip</a></p>
                     < Clip />
+                    <p><a href = "" target="_" >Next Clip</a></p>
+                    </p>
                 </header>
             </div>
         )

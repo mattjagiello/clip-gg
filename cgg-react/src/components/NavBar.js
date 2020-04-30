@@ -14,6 +14,11 @@ class NavBar extends Component {
             <div className="NavBar-Main">
                 <header>
                     <p>NavBar Component</p>
+                    <div className="nav-bar">
+                        <div id="header">Clip GG App</div>
+                        <a href='/signup'>Signup</a>
+                        <a href= '/login'>Login</a>
+                    </div>
                 </header>
             </div>
         )
