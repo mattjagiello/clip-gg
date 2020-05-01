@@ -29,16 +29,21 @@ class ClipContainer extends Component {
             )
     }
 
-    // this.setState({
-    //     address: e.target.value
-    //   },
-    //   () => this.props.filterSearch(this.state.address))
-    // }
+    prevClip = (e) => {
+        e.preventDefault();
+        this.setState((prevState, props) => ({
+            counter: prevState.counter - 1,
+            currentClip: this.state.clips[24]
+            // TODO Fix setting current clip to state of counter
+          }));          
+    }
 
     nextClip = (e) => {
         e.preventDefault();
         this.setState((prevState, props) => ({
-            counter: prevState.counter + 1
+            counter: prevState.counter + 1,
+            currentClip: this.state.clips[24]
+          // TODO Fix setting current clip to state of counter
           }));          
     }
 
