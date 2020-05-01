@@ -29,22 +29,30 @@ class ClipContainer extends Component {
             )
     }
 
+    // TODO Lifecycle method of wrapping in ComponentDidMount didn't load props
+    // clipSlug = () => {
+    //     let slug = this.state.currentClip.post_url.slice(0, 14)
+    //     console.log(slug);
+    // }
+
     prevClip = (e) => {
         e.preventDefault();
+        let post_url = this.state.currentClip.post_url
+        console.log(post_url)
+        // let slug = this.state.currentClip.post_url.slice(0, 14)
         this.setState((prevState, props) => ({
             counter: prevState.counter - 1,
-            currentClip: this.state.clips[24]
+            currentClip: this.state.clips[19]
             // TODO Fix setting current clip to state of counter
-          }));          
+        }));
     }
 
     nextClip = (e) => {
-        e.preventDefault();
         this.setState((prevState, props) => ({
             counter: prevState.counter + 1,
-            currentClip: this.state.clips[24]
-          // TODO Fix setting current clip to state of counter
-          }));          
+            currentClip: this.state.clips[19]
+            // TODO Fix setting current clip to state of counter
+        }));
     }
 
     render() {

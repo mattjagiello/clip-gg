@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_004206) do
 
   create_table "posts", force: :cascade do |t|
     t.string "post_name"
+    t.string "post_link"
     t.string "post_url"
     t.integer "post_upvotes"
     t.datetime "created_at", precision: 6, null: false

@@ -22,8 +22,7 @@ class Clip extends Component {
                         // allowfullscreen="true"
                         height="378"
                         width="620"
-                        title="test"
-                        // TODO - Add unique title for each clip
+                        title={this.props.currentClip.post_name}
                         >
                             </iframe></p>
                 </header>

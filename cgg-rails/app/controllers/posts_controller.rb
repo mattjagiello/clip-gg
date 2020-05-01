@@ -41,7 +41,8 @@ class PostsController < ApplicationController
         json_response[:data][:children].each do |post|
             p = Post.create(
                 post_name: post[:data][:title],
-                post_url: post[:data][:permalink],
+                post_url: post[:data][:url],
+                post_link: post[:data][:permalink],
                 post_upvotes: post[:data][:ups],
               )
             c = Clip.create(
