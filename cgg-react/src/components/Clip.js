@@ -6,7 +6,7 @@ class Clip extends Component {
         super(props)
         this.state = {
             curUser: '',
-            clipArray: props.clipArray
+            currentClip: props.currentClip
         }
     }
 
@@ -16,6 +16,7 @@ class Clip extends Component {
                 <header>
                     <p><iframe 
                         src="https://clips.twitch.tv/embed?clip=GeniusAbstruseHawkAMPEnergy"
+                        
                         // TODO - Accept props of url for clip
                         // frameborder="0"
                         // allowfullscreen="true"

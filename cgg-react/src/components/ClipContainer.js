@@ -8,7 +8,8 @@ class ClipContainer extends Component {
         this.state = {
             curUser: '',
             clips: [],
-            currentClip: undefined,
+            currentClip: [],
+            counter: 1
         }
     }
 
@@ -22,9 +23,23 @@ class ClipContainer extends Component {
         })
             .then(res => res.json())
             .then(json => this.setState({
-                clips: json
+                clips: json,
+                currentClip: json[1],
             })
             )
+    }
+
+    // this.setState({
+    //     address: e.target.value
+    //   },
+    //   () => this.props.filterSearch(this.state.address))
+    // }
+
+    nextClip = (e) => {
+        e.preventDefault();
+        this.setState((prevState, props) => ({
+            counter: prevState.counter + 1
+          }));          
     }
 
     render() {
@@ -32,9 +47,9 @@ class ClipContainer extends Component {
             <div className="ClipContainer-Main">
                 <header>
                     <p>ClipContainer Component</p>
-                    <p><a href='/test' >Previous Clip</a></p>
-                    < Clip clipArray={this.state.clips} />
-                    <p><a href="/test" >Next Clip</a></p>
+                    <p><input type="button" onClick={this.prevClip} /></p>
+                    < Clip clipArray={this.state.clips} currentClip={this.state.currentClip} />
+                    <p><input type="button" onClick={this.nextClip} /></p>
                 </header>
             </div>
         )
