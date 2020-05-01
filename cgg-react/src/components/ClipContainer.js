@@ -9,7 +9,8 @@ class ClipContainer extends Component {
             curUser: '',
             clips: [],
             currentClip: [],
-            counter: 1
+            counter: 1,
+            slug: ''
         }
     }
 
@@ -38,20 +39,21 @@ class ClipContainer extends Component {
     prevClip = (e) => {
         e.preventDefault();
         let post_url = this.state.currentClip.post_url
-        console.log(post_url)
+        console.log(post_url.slice(24, -1))
         // let slug = this.state.currentClip.post_url.slice(0, 14)
         this.setState((prevState, props) => ({
             counter: prevState.counter - 1,
-            currentClip: this.state.clips[19]
-            // TODO Fix setting current clip to state of counter
+            currentClip: this.state.clips[19],
+            slug: post_url.slice(24, -1)
         }));
     }
 
     nextClip = (e) => {
+        let post_url = this.state.currentClip.post_url
         this.setState((prevState, props) => ({
             counter: prevState.counter + 1,
-            currentClip: this.state.clips[19]
-            // TODO Fix setting current clip to state of counter
+            currentClip: this.state.clips[20],
+            slug: post_url.slice(24, -1)
         }));
     }
 
@@ -61,7 +63,11 @@ class ClipContainer extends Component {
                 <header>
                     <p>ClipContainer Component</p>
                     <p><input type="button" onClick={this.prevClip} /></p>
-                    < Clip clipArray={this.state.clips} currentClip={this.state.currentClip} />
+                    < Clip
+                        clipArray={this.state.clips}
+                        currentClip={this.state.currentClip}
+                        slug={this.state.slug}
+                    />
                     <p><input type="button" onClick={this.nextClip} /></p>
                 </header>
             </div>

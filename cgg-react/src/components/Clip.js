@@ -15,7 +15,7 @@ class Clip extends Component {
             <div className="Clip-Main">
                 <header>
                     <p><iframe 
-                        src="https://clips.twitch.tv/embed?clip=GeniusAbstruseHawkAMPEnergy"
+                        src={"https://clips.twitch.tv/embed?clip="+ this.props.slug}
                         
                         // TODO - Accept props of url for clip
                         // frameborder="0"
