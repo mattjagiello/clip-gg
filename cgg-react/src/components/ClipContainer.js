@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Clip from './Clip.js';
-import ClipTest from './ClipTest.js';
+// import ClipTest from './ClipTest.js';
 
 class ClipContainer extends Component {
 
