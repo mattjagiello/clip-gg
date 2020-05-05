@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Clip from './Clip.js';
+import ClipTest from './ClipTest.js';
 
 class ClipContainer extends Component {
 
@@ -30,12 +31,6 @@ class ClipContainer extends Component {
             )
     }
 
-    // TODO Lifecycle method of wrapping in ComponentDidMount didn't load props
-    // clipSlug = () => {
-    //     let slug = this.state.currentClip.post_url.slice(0, 14)
-    //     console.log(slug);
-    // }
-
     prevClip = (e) => {
         e.preventDefault();
         let post_url = this.state.currentClip.post_url
@@ -44,8 +39,26 @@ class ClipContainer extends Component {
         this.setState((prevState, props) => ({
             counter: prevState.counter - 1,
             currentClip: this.state.clips[19],
-            slug: post_url.slice(24, -1)
+            slug: post_url.split('/').pop()
         }));
+        console.log(this.state.slug)
+    }
+
+    fetchClip = () => {
+        fetch("https://api.twitch.tv/helix/clips?id=AwkwardHelplessSalamanderSwiftRage", {
+            "method": "GET",
+            "headers": {
+              "cookie": "unique_id=cnlCgMyp49nDacMvZWIBWKU3GRS4OHdX; unique_id_durable=cnlCgMyp49nDacMvZWIBWKU3GRS4OHdX",
+              "client-id": "j7bfupvh4ar4ysmzwyg3oqtlpolvyf",
+              "authorization": "Basic Og=="
+            }
+          })
+          .then(response => {
+            console.log(response);
+          })
+          .catch(err => {
+            console.log(err);
+          });
     }
 
     nextClip = (e) => {
@@ -53,8 +66,9 @@ class ClipContainer extends Component {
         this.setState((prevState, props) => ({
             counter: prevState.counter + 1,
             currentClip: this.state.clips[20],
-            slug: post_url.slice(24, -1)
+            slug: post_url.split('/').pop()
         }));
+        this.fetchClip();
     }
 
     render() {
@@ -68,11 +82,14 @@ class ClipContainer extends Component {
                         currentClip={this.state.currentClip}
                         slug={this.state.slug}
                     />
+                    {/* < ClipTest /> */}
                     <p><input type="button" onClick={this.nextClip} /></p>
                 </header>
             </div>
         )
     }
 }
+
+
 
 export default ClipContainer    

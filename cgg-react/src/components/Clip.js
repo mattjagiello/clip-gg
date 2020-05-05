@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { TwitchClip } from 'react-twitch-embed'
 
 class Clip extends Component {
 
@@ -10,14 +11,17 @@ class Clip extends Component {
         }
     }
 
-    render() {
-        return (
-            <div className="Clip-Main">
-                <header>
-                    <div id="twitch-embed">
-                    <script src="https://embed.twitch.tv/embed/v1.js"></script>
 
-                        <iframe
+
+render() {
+    console.log("Slug:", this.props.slug)
+    return (
+        <div className="Clip-Main">
+            <header>
+                <div id="twitch-embed">
+                    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+                    {this.props.slug ? <TwitchClip clip={this.props.slug} /> : null}
+                    {/* <iframe
                             // src={"https://clips.twitch.tv/embed?clip=" + this.props.slug + "&parent=clipgg.heroku.com"}
                             src={"https://clips.twitch.tv/embed?clip=" + this.props.slug + "&parent=streamernews.example.com&parent=embed.example.com"}
                             // TODO - Accept props of url for clip
@@ -29,12 +33,13 @@ class Clip extends Component {
                             preload="auto"
                             parent="http://localhost/"
                         >
-                        </iframe>
-                    </div>
-                </header >
-            </div >
-        )
-    }
+                        </iframe> */}
+                </div>
+            </header >
+        </div >
+    )
+}
 }
 
 export default Clip;    
+
