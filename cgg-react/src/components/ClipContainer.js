@@ -38,34 +38,17 @@ class ClipContainer extends Component {
         // let slug = this.state.currentClip.post_url.slice(0, 14)
         this.setState((prevState, props) => ({
             counter: prevState.counter - 1,
-            currentClip: this.state.clips[19],
+            currentClip: this.state.clips[this.state.counter],
             slug: post_url.split('/').pop()
         }));
         console.log(this.state.slug)
-    }
-
-    fetchClip = () => {
-        fetch("https://api.twitch.tv/helix/clips?id=AwkwardHelplessSalamanderSwiftRage", {
-            "method": "GET",
-            "headers": {
-              "cookie": "unique_id=cnlCgMyp49nDacMvZWIBWKU3GRS4OHdX; unique_id_durable=cnlCgMyp49nDacMvZWIBWKU3GRS4OHdX",
-              "client-id": "j7bfupvh4ar4ysmzwyg3oqtlpolvyf",
-              "authorization": "Basic Og=="
-            }
-          })
-          .then(response => {
-            console.log(response);
-          })
-          .catch(err => {
-            console.log(err);
-          });
     }
 
     nextClip = (e) => {
         let post_url = this.state.currentClip.post_url
         this.setState((prevState, props) => ({
             counter: prevState.counter + 1,
-            currentClip: this.state.clips[20],
+            currentClip: this.state.clips[this.state.counter],
             slug: post_url.split('/').pop()
         }));
         this.fetchClip();
