@@ -51,7 +51,7 @@ class ClipContainer extends Component {
             currentClip: this.state.clips[this.state.counter],
             slug: post_url.split('/').pop()
         }));
-        this.fetchClip();
+        // this.fetchClip();
     }
 
     render() {
@@ -59,14 +59,14 @@ class ClipContainer extends Component {
             <div className="ClipContainer-Main">
                 <header>
                     <p>ClipContainer Component</p>
-                    <p><input type="button" onClick={this.prevClip} /></p>
                     < Clip
                         clipArray={this.state.clips}
                         currentClip={this.state.currentClip}
                         slug={this.state.slug}
                     />
                     {/* < ClipTest /> */}
-                    <p><input type="button" onClick={this.nextClip} /></p>
+                    <p>{ this.state.counter ? <input type="button" onClick={this.prevClip} /> : null }
+                       <input type="button" onClick={this.nextClip} /></p>
                 </header>
             </div>
         )
