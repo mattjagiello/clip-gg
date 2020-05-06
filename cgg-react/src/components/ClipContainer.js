@@ -12,7 +12,7 @@ class ClipContainer extends Component {
             clips: [],
             currentClip: [],
             counter: 1,
-            slug: ''
+            slug: '',
         }
     }
 
@@ -40,7 +40,7 @@ class ClipContainer extends Component {
         this.setState((prevState, props) => ({
             counter: prevState.counter - 1,
             currentClip: this.state.clips[this.state.counter],
-            slug: post_url.split('/').pop()
+            slug: post_url.split('/').pop(),
         }));
         console.log(this.state.slug)
     }
@@ -50,7 +50,7 @@ class ClipContainer extends Component {
         this.setState((prevState, props) => ({
             counter: prevState.counter + 1,
             currentClip: this.state.clips[this.state.counter],
-            slug: post_url.split('/').pop()
+            slug: post_url.split('/').pop(),
         }));
         // this.fetchClip();
     }
@@ -67,7 +67,10 @@ class ClipContainer extends Component {
                     />
                     {/* < ClipTest /> */}
                     < NavButtons prevClip={this.prevClip} nextClip={this.nextClip} />
-                    {this.state.currentClip ? <CommentContainer /> : null}
+                    {this.state.currentClip ? <CommentContainer
+                     comments={this.state.comments} 
+                     counter={this.state.counter}
+                     /> : null}
                 </header>
             </div>
         )

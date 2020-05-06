@@ -12,17 +12,17 @@ class Comment extends Component {
     render() {
         return (
             <div className="Comment-Main">
-                    <ul>
-                        <li>
-                            Comment 1 - Placeholder
-                        </li>
-                        <li>
-                            Comment 2 - Placeholder
-                        </li>
-                        <li>
-                            Comment 3 - Placeholder
-                        </li>
-                    </ul>
+                <ul>
+                    <li>
+                        {this.props.comments ? this.props.comments[this.props.counter] : null }
+                    </li>
+                    <li>
+                        {this.props.comments ? this.props.comments[this.props.counter]  : null }
+                    </li>
+                    <li>
+                        {this.props.comments ? this.props.comments[this.props.counter]  : null }
+                    </li>
+                </ul>
             </div>
         )
     }

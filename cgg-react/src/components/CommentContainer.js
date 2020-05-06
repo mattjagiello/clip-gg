@@ -7,6 +7,7 @@ class CommentContainer extends Component {
         super()
         this.state = {
             curUser: '',
+            comments: [1,2,3]
         }
     }
 
@@ -14,7 +15,10 @@ class CommentContainer extends Component {
         return (
             <div className="CommentContainer-Main">
                 <header>
-                <Comment />
+                <Comment 
+                comments = {this.state.comments}
+                counter={this.props.counter}
+                />
                 </header>
             </div>
         )
