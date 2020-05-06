@@ -8,10 +8,6 @@ require "awesome_print"
 class CommentsController < ApplicationController
 
     def index
-        require 'uri'
-        require 'net/http'
-        require 'openssl'
-        
         url = URI("https://www.reddit.com/r/LivestreamFail/comments/gdrvy5/fed_accidentally_breaks_the_window/.json")
         
         http = Net::HTTP.new(url.host, url.port)
