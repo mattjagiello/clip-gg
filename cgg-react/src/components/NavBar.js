@@ -5,7 +5,6 @@ class NavBar extends Component {
     constructor() {
         super()
         this.state = {
-            curUser: '',
         }
     }
 
@@ -13,11 +12,10 @@ class NavBar extends Component {
         return (
             <div className="NavBar-Main">
                 <header>
-                    <p>NavBar Component</p>
                     <div className="nav-bar">
-                        <div id="header">Clip GG App</div>
+                        <div id="header">Clip GG</div>
                         <a href='/signup'>Signup</a>
-                        <a href= '/login'>Login</a>
+                        <input type="button" onClick={this.props.login} />
                     </div>
                 </header>
             </div>

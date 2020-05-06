@@ -17,18 +17,25 @@ class App extends Component {
             curUser: '',
         }
     }
+
+    loginAction = () => {
+        this.setState({
+            curUser: 'user'
+        })
+    }
+
     render() {
 
         return (
             <div className="App">
-                <NavBar />
-                <ClipContainer />
+                <NavBar curUser = {this.state.curUser} login={this.loginAction} />
+                {this.state.curUser ? <ClipContainer />: null}
                 {/* <Clip /> */}
-                <SaveClip />
-                <CommentContainer />
-                <Comment />
-                <UserContainer />
-                <User />
+                {this.state.curUser ? <SaveClip /> : null}
+                {this.state.curUser ? <CommentContainer />: null}
+                {this.state.curUser ? <Comment />: null}
+                {this.state.curUser ? <UserContainer />: null}
+                {this.state.curUser ? <User />: null}
             </div>
         );
     }
