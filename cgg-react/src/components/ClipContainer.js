@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Clip from './Clip.js';
-// import ClipTest from './ClipTest.js';
+import NavButtons from './NavButtons.js';
 
 class ClipContainer extends Component {
 
@@ -65,8 +65,7 @@ class ClipContainer extends Component {
                         slug={this.state.slug}
                     />
                     {/* < ClipTest /> */}
-                    <p>{ this.state.counter ? <input type="button" onClick={this.prevClip} /> : null }
-                       <input type="button" onClick={this.nextClip} /></p>
+                    < NavButtons prevClip = {this.prevClip} nextClip = {this.nextClip} />
                 </header>
             </div>
         )
