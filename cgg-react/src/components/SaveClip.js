@@ -9,14 +9,7 @@ class SaveClip extends Component {
     }
 
     makeSelectionList = () => {
-        return this.props.clips.map((item, idx) => <option key={idx} value={item.post_name} >{item.post_name}</option>)
-    }
-
-    handleSelectionChange = (e) => {
-        console.log(e.target.value);
-        this.setState({
-            currentClip: e.target.value,
-        })
+        return this.props.clips.map((item, idx) => <option key={idx} value={item.value} >{item.post_name}</option>)
     }
 
     render() {
@@ -25,8 +18,8 @@ class SaveClip extends Component {
                 <header>
                     <p>SaveClip Component</p>
                 </header>
-                <div id="timeline-selector">
-                    <select onChange={this.handleSelectionChange}>
+                <div id="clip-selector">
+                    <select onChange={this.props.handleSelectionChange}>
                         <option value='' >Select a Clip</option>
                         {this.makeSelectionList()}
                     </select>

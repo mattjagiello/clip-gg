@@ -12,6 +12,12 @@ class Clip extends Component {
         }
     }
 
+    handleSelectionChange = (e) => {
+        console.log(e.target.value);
+        this.setState({
+            currentClip: e.target.value,
+        })
+    }
 
 
 render() {
@@ -37,7 +43,11 @@ render() {
                         </iframe> */}
                 </div>
             </header >
-            < SaveClip currentClip={this.state.currentClip} clips={this.props.clips} />
+            < SaveClip 
+                currentClip={this.state.currentClip} 
+                clips={this.props.clips} 
+                handleSelectionChange = {this.handleSelectionChange}
+                />
         </div >
     )
 }
