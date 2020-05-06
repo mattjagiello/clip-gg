@@ -29,7 +29,7 @@ class App extends Component {
         return (
             <div className="App">
                 <NavBar curUser = {this.state.curUser} login={this.loginAction} />
-                {this.state.curUser ? <ClipContainer />: null}
+                <ClipContainer />
                 {/* <Clip /> */}
                 {this.state.curUser ? <SaveClip /> : null}
                 {this.state.curUser ? <CommentContainer />: null}

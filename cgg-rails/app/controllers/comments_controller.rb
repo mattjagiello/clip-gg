@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
         response = http.request(request)
         puts response.read_body
         json_response = JSON.parse(response.body, symbolize_names: true)
-        binding.pry
+        # binding.pry
         # json_response = JSON.parse(response.body, symbolize_names: true) #=> {key: :value}
         # ap(json_response)
 
