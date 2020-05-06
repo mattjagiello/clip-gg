@@ -58,7 +58,6 @@ class ClipContainer extends Component {
         return (
             <div className="ClipContainer-Main">
                 <header>
-                    <p>ClipContainer Component</p>
                     < Clip
                         clipArray={this.state.clips}
                         currentClip={this.state.currentClip}

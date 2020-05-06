@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { TwitchClip } from 'react-twitch-embed'
-import SaveClip from './SaveClip.js';
+import ChangeClip from './ChangeClip.js';
 
 class Clip extends Component {
 
@@ -13,22 +13,28 @@ class Clip extends Component {
     }
 
     handleSelectionChange = (e) => {
+        let clipObj = undefined;
         console.log(e.target.value);
+        this.props.clips.forEach(element => {
+            if (element.post_name === e.target.value) {
+                clipObj = element
+            }
+        });
         this.setState({
-            currentClip: e.target.value,
+            currentClip: clipObj,
         })
     }
 
 
-render() {
-    console.log("Slug:", this.props.slug)
-    return (
-        <div className="Clip-Main">
-            <header>
-                <div id="twitch-embed">
-                    <script src="https://embed.twitch.tv/embed/v1.js"></script>
-                    {this.props.slug ? <TwitchClip clip={this.props.slug} /> : null}
-                    {/* <iframe
+    render() {
+        console.log("Slug:", this.props.slug)
+        return (
+            <div className="Clip-Main">
+                <header>
+                    <div id="twitch-embed">
+                        <script src="https://embed.twitch.tv/embed/v1.js"></script>
+                        {this.props.slug ? <TwitchClip clip={this.props.slug} /> : null}
+                        {/* <iframe
                             // src={"https://clips.twitch.tv/embed?clip=" + this.props.slug + "&parent=clipgg.heroku.com"}
                             src={"https://clips.twitch.tv/embed?clip=" + this.props.slug + "&parent=streamernews.example.com&parent=embed.example.com"}
                             // TODO - Accept props of url for clip
@@ -41,17 +47,17 @@ render() {
                             parent="http://localhost/"
                         >
                         </iframe> */}
-                </div>
-            </header >
-            < SaveClip 
-                currentClip={this.state.currentClip} 
-                clips={this.props.clips} 
-                handleSelectionChange = {this.handleSelectionChange}
+                    </div>
+                </header >
+                < ChangeClip
+                    currentClip={this.state.currentClip}
+                    clips={this.props.clips}
+                    handleSelectionChange={this.handleSelectionChange}
                 />
-        </div >
-    )
-}
+            </div >
+        )
+    }
 }
 
-export default Clip;    
+export default Clip;
 

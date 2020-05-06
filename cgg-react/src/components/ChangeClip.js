@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class SaveClip extends Component {
+class ChangeClip extends Component {
 
     constructor() {
         super()
@@ -15,9 +15,6 @@ class SaveClip extends Component {
     render() {
         return (
             <div className="SaveClip-Main">
-                <header>
-                    <p>SaveClip Component</p>
-                </header>
                 <div id="clip-selector">
                     <select onChange={this.props.handleSelectionChange}>
                         <option value='' >Select a Clip</option>
@@ -29,4 +26,4 @@ class SaveClip extends Component {
     }
 }
 
-export default SaveClip    
+export default ChangeClip    
