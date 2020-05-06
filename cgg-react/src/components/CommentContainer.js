@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Comment from './Comment.js';
 
 class CommentContainer extends Component {
 
@@ -13,6 +14,7 @@ class CommentContainer extends Component {
         return (
             <div className="CommentContainer-Main">
                 <header>
+                <Comment />
                 </header>
             </div>
         )

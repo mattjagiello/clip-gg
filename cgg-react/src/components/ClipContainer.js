@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Clip from './Clip.js';
 import NavButtons from './NavButtons.js';
+import CommentContainer from './CommentContainer.js';
 
 class ClipContainer extends Component {
 
@@ -65,7 +66,8 @@ class ClipContainer extends Component {
                         clips={this.state.clips}
                     />
                     {/* < ClipTest /> */}
-                    < NavButtons prevClip = {this.prevClip} nextClip = {this.nextClip} />
+                    < NavButtons prevClip={this.prevClip} nextClip={this.nextClip} />
+                    {this.state.currentClip ? <CommentContainer /> : null}
                 </header>
             </div>
         )
