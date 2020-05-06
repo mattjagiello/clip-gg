@@ -14,8 +14,8 @@ class NavBar extends Component {
                 <header>
                     <div className="nav-bar">
                         <div id="header">Clip GG</div>
-                        <a href='/signup'>Signup</a>
-                        <input type="button" onClick={this.props.login} />
+                        {/* <a href='/signup'>Signup</a>
+                        <input type="button" onClick={this.props.login} /> */}
                     </div>
                 </header>
             </div>

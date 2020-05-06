@@ -63,6 +63,7 @@ class ClipContainer extends Component {
                         clipArray={this.state.clips}
                         currentClip={this.state.currentClip}
                         slug={this.state.slug}
+                        clips={this.state.clips}
                     />
                     {/* < ClipTest /> */}
                     < NavButtons prevClip = {this.prevClip} nextClip = {this.nextClip} />

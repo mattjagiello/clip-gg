@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { TwitchClip } from 'react-twitch-embed'
+import SaveClip from './SaveClip.js';
 
 class Clip extends Component {
 
@@ -36,6 +37,7 @@ render() {
                         </iframe> */}
                 </div>
             </header >
+            < SaveClip currentClip={this.state.currentClip} clips={this.props.clips} />
         </div >
     )
 }
