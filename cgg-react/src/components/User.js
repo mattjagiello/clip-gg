@@ -13,7 +13,7 @@ class User extends Component {
         return (
             <div className="User-Main">
                 <header>
-                    <p>User Component</p>
+                    {/* <p>User Component</p> */}
                 </header>
             </div>
             

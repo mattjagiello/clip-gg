@@ -13,7 +13,6 @@ class CommentContainer extends Component {
         return (
             <div className="CommentContainer-Main">
                 <header>
-                    <p>CommentContainer Component</p>
                 </header>
             </div>
         )

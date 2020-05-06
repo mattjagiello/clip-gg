@@ -12,9 +12,17 @@ class Comment extends Component {
     render() {
         return (
             <div className="Comment-Main">
-                <header>
-                    <p>Comment Component</p>
-                </header>
+                    <ul>
+                        <li>
+                            Comment 1 - Placeholder
+                        </li>
+                        <li>
+                            Comment 2 - Placeholder
+                        </li>
+                        <li>
+                            Comment 3 - Placeholder
+                        </li>
+                    </ul>
             </div>
         )
     }
