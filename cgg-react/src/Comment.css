@@ -1,0 +1,16 @@
+ol {
+	list-style-type: none;
+	counter-reset: li;
+}
+li {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+li:before {
+  counter-increment: li;
+  content: counter(li, decimal-leading-zero);
+	color: #d06be4;
+	margin-right: 0.25em;
+}

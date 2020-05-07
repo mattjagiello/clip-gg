@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../Account.css';
 
 class Account extends Component {
 
@@ -70,64 +71,64 @@ class Account extends Component {
   }
 
   render() {
-    return <div id="login-page">
+    return <div id="login-page" className="login-page">
 
       <h2>Existing User?</h2>
       <form onSubmit={this.handleLoginSubmit}>
-        <label htmlFor='email'>Email</label>
+        <label htmlFor='email'>Email </label>
         <input
           type="text"
           name="email"
           onChange={event => this.handleChange(event)}
           value={this.state.email}
         />
-
-        <label htmlFor='password'>Password</label>
+        <br></br>
+        <label htmlFor='password'>Password </label>
         <input
           type="text"
           name="password"
           onChange={event => this.handleChange(event)}
           value={this.state.password}
         />
-
+        <br></br>
         <button type="submit">Login</button>
         <input type="button" onClick={this.props.login} />
       </form>
 
         <h2>Create Account</h2>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor='email'>Email</label>
+          <label htmlFor='email'>Email </label>
           <input
             type="text"
             name="email"
             onChange={event => this.handleChange(event)}
             value={this.state.email}
           />
-
-          <label htmlFor='password'>Password</label>
+          <br></br>
+          <label htmlFor='password'>Password </label>
           <input
             type="text"
             name="password"
             onChange={event => this.handleChange(event)}
             value={this.state.password}
           />
-
-          <label htmlFor='password_confirmation'>Confirm Password</label>
+          <br></br>
+          <label htmlFor='password_confirmation'>Confirm Password </label>
           <input
             type="text"
             name="password_confirmation"
             onChange={event => this.handleChange(event)}
             value={this.state.password_confirmation}
           />
-
-          <label htmlFor='name'>Twitch Username</label>
+          <br></br>
+          <label htmlFor='name'>Twitch Username </label>
           <input
             type="text"
             name="name"
             onChange={event => this.handleChange(event)}
             value={this.state.name}
           />
-
+          <br></br>
           {/* <LinkButton to='/signup'>Signup</LinkButton> */}
           <button type="submit">Create Account</button>
           <input type="button" onClick={this.props.login} />

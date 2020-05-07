@@ -7,7 +7,7 @@ class CommentContainer extends Component {
         super()
         this.state = {
             curUser: '',
-            comments: [1,2,3]
+            comments: ['No comment data found','No comment data found','No comment data found']
         }
     }
 

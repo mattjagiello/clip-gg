@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './ChangeClip.css';
+import '../ChangeClip.css';
 
 class ChangeClip extends Component {
 

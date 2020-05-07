@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../Comment.css';
 
 class Comment extends Component {
 
@@ -12,7 +13,7 @@ class Comment extends Component {
     render() {
         return (
             <div className="Comment-Main">
-                <ul>
+                <ol>
                     <li>
                         {this.props.comments ? this.props.comments[this.props.counter] : null }
                     </li>
@@ -22,7 +23,7 @@ class Comment extends Component {
                     <li>
                         {this.props.comments ? this.props.comments[this.props.counter]  : null }
                     </li>
-                </ul>
+                </ol>
             </div>
         )
     }
