@@ -8,7 +8,8 @@ class Clip extends Component {
         super(props)
         this.state = {
             curUser: '',
-            currentClip: props.currentClip
+            currentClip: props.currentClip,
+            default: 'HilariousFairGoblinImGlitch'
         }
     }
 
@@ -33,7 +34,7 @@ class Clip extends Component {
                 <header>
                     <div id="twitch-embed">
                         <script src="https://embed.twitch.tv/embed/v1.js"></script>
-                        {this.props.slug ? <TwitchClip clip={this.props.slug} /> : null}
+                        {this.props.slug ? <TwitchClip clip={this.props.slug} /> : <TwitchClip clip={this.state.default}/> }
                         {/* <iframe
                             // src={"https://clips.twitch.tv/embed?clip=" + this.props.slug + "&parent=clipgg.heroku.com"}
                             src={"https://clips.twitch.tv/embed?clip=" + this.props.slug + "&parent=streamernews.example.com&parent=embed.example.com"}
